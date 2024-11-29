@@ -14,6 +14,25 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
+
+
+        int num_tests = 5;
+
+        System.out.println("Testing 'contains':");
+
+        boolean test1 = MyString.contains("baba yaga", "baba");
+        boolean test2 = MyString.contains("baba yaga", "");
+        boolean test3 = !MyString.contains("baba yaga", "John Wick is the baba yaga");
+        boolean test4 = !MyString.contains("baba yaga", "Yaga");
+        boolean test5 = !MyString.contains("baba yaga", "babayaga");
+        System.out.println(test1 + " " + test2 + " " + test3 + " " + test4 + " " + test5 + ".");
+
+
+        int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0) + (test4 ? 1 : 0) +
+                     (test5 ? 1 : 0);
+        String verdict = passed == num_tests ? "(Passed)": "Failed";
+
+        System.out.println("Passed " + passed + "/" + num_tests + " tests " + verdict);
     }
 
     /** Returns the lowercase version of the given string. */
@@ -47,7 +66,7 @@ public class MyString {
             return false;
         } 
         // Case: Empty String.
-        if (str2 == "") {
+        if (str2.equals("")) {
             return true;
         }
         // Case: Str1 cannot contain Str2 as it's smaller.
@@ -55,11 +74,11 @@ public class MyString {
             return false;
         }
         // Logic: More comfortable dealing with lower cases.
-        str1 = str1.toLowerCase();
-        str2 = str2.toLowerCase();
+        // str1 = str1.toLowerCase();
+        // str2 = str2.toLowerCase();
         // Logic: More comfortable dealing without spaces.
-        str1 = removeSpaces(str1);
-        str2 = removeSpaces(str2);
+        // str1 = removeSpaces(str1);
+        // str2 = removeSpaces(str2);
         // Logic: Prevent Exceedance.
         int iterateLimit = str1.length() - str2.length();
         for (int i = 0; i <= iterateLimit; i++) {
