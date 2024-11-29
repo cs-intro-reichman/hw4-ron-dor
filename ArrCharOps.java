@@ -161,6 +161,10 @@ public class ArrCharOps {
         if (str1 == null || str2 == null) {
             return -2;
         }
+        // Case: Empty String.
+        if (str1.isEmpty() || str2.isEmpty()) {
+            return -2;
+        }
         int minLength = Math.min(str1.length(), str2.length());
         // Purpose: Make it easier afterwards.
         String whoBigger = "";
