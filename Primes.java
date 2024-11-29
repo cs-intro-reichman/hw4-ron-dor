@@ -26,6 +26,9 @@ public class Primes {
             }
         }
         int pctCountInt = (int) (((double) countPrime / nMax) * 100);
-        System.out.println("There are " + countPrime + " primes between 2 and " + nMax + " (" + pctCountInt + "% are primes)");
-    }
+        System.out.println(String.format(
+            "There are %d primes between 2 and %d (%d%% are primes)", 
+            countPrime, nMax, pctCountInt
+        ));
+        }
 }
